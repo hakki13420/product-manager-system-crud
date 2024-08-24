@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>product manager system</h1>
+            <h5>crud</h5>
+        </header>
+        <div class="data">
+            <form class="data-crud">
+                <input id="id" type="hidden" >
+                <input id="title" type="text" placeholder="title">
+                <span class="error error-inactive"></span>
+                <div class="product-qte">
+                    <input onkeyup="Product.getTotalPrice()" id="price" type="number" placeholder="price">
+                    <span class="error error-inactive"></span>
+                    <input onkeyup="Product.getTotalPrice()" id="taxes" type="number" placeholder="impot">
+                    <span class="error error-inactive"></span>
+                    <input onkeyup="Product.getTotalPrice()" id="ads" type="number" placeholder="pub">
+                    <span class="error-inactive"></span>
+                    <input onkeyup="Product.getTotalPrice()" id="discount" type="number" placeholder="descount">
+                    <span class="error-inactive"></span>
+                    <small id="total" class="small"></small>
+                </div>
+                <input id="count" type="number" placeholder="count">
+                <input id="category" type="text" placeholder="categoies">
+                <button id='btn-submit' class="data-btn">create</button>
+            </form>
+            <div class="search-box">
+                <input name="searchTitle" id='search-input' type="text" placeholder="search...">
+                <div class="search-btn">
+                    <button onclick='Product.sourceData(document.getElementById("search-input").value, "title")' id='search-title' class="data-btn">Search By Title</button>
+                    <button onclick='Product.sourceData(document.getElementById("search-input").value, "category")' id='search-category' class="data-btn">Search By category</button>
+                </div>
+            </div>
+            <div class="delete-box">
+                <button onclick="Product.removeAllProducts()" id='products-info' class="data-btn">
+                    Delete All(<span>120</span>)
+                </button>
+        </div>
+        </div>
+        <div class="outputs">
+            <table id="products-table">
+                <thead>
+                    <th>id</th>
+                    <th>title</th>
+                    <th>price</th>
+                    <th>taxes</th>
+                    <th>ads</th>
+                    <th>discount</th>
+                    <th>total</th>
+                    <th>count</th>
+                    <th>category</th>
+                    <th>Actions</th>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
